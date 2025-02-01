@@ -1,0 +1,17 @@
+@ChatApi_HostAddress = https://localhost:8080
+
+POST {{ChatApi_HostAddress}}/api/chat
+Content-Type: application/json
+
+{
+  "input": "I need to complete a task for the Project: Highgarden website. Who can help me with this?"
+}
+###
+
+POST {{ChatApi_HostAddress}}/api/chat
+Content-Type: application/json
+
+{
+  "input": "Who created Microsoft?"
+}
+###
