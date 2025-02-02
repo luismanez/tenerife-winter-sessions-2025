@@ -72,7 +72,9 @@ public static class ServiceCollectionExtensions
                 // });
             });
 
-            var memory = kmBuilder.Build<MemoryServerless>();
+            var memory = kmBuilder.Build<MemoryServerless>(new KernelMemoryBuilderBuildOptions {
+                            AllowMixingVolatileAndPersistentData = true
+                        });
 
             return memory;
         });

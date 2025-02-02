@@ -25,13 +25,13 @@ public class UserResumeService(GraphServiceClient graphServiceClient)
                 Id = user.Id!,
                 Name = user.DisplayName!,
                 Mail = user.Mail!,
-                Skills = skills.Value.Select(s => new Skill { Id = s.Id, Name = s.DisplayName }),
-                Projects = projects.Value.Select(p => new Project
+                Skills = skills!.Value!.Select(s => new Skill { Id = s.Id!, Name = s.DisplayName! }),
+                Projects = projects!.Value!.Select(p => new Project
                 {
-                    Id = p.Id,
-                    Name = p.DisplayName,
-                    Description = p.Detail.Description,
-                    Summary = p.Detail.Summary
+                    Id = p.Id!,
+                    Name = p.DisplayName!,
+                    Description = p.Detail!.Description!,
+                    Summary = p.Detail.Summary!
                 })
             });
         }

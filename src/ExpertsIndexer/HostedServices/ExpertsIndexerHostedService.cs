@@ -31,6 +31,8 @@ public class ExpertsIndexerHostedService(
 
             Console.WriteLine($"DONE!");
         }
+
+        Console.WriteLine($"====== ALL WORK DONE! ======");
     }
 
     public Task StopAsync(CancellationToken cancellationToken)

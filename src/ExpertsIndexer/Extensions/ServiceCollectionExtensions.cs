@@ -35,7 +35,9 @@ public static class ServiceCollectionExtensions
                         .WithAzureOpenAITextEmbeddingGeneration(azureOpenAIEmbeddingConfig)
                         .WithAzureOpenAITextGeneration(azureOpenAITextConfig)
                         .WithAzureAISearchMemoryDb(azureAISearchConfig)
-                        .Build<MemoryServerless>();
+                        .Build<MemoryServerless>(new KernelMemoryBuilderBuildOptions {
+                            AllowMixingVolatileAndPersistentData = true
+                        });
 
         services.AddSingleton(memory);
 
